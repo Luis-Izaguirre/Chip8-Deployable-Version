@@ -55,7 +55,7 @@ class Keyboard {
 
 const COLS = 64
 const ROWS = 32
-const SCALE = 15
+const SCALE = 10
 
 
 class Monitor {
@@ -563,6 +563,6 @@ function loadROM(romName) {
     });
 }
 
-loadROM('SPACE-INVADER');
+loadROM('BLITZ');
 
 

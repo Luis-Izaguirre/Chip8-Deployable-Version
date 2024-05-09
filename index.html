@@ -112,9 +112,42 @@
         romsSelect.addEventListener('change', function() {
             const selectedRom = romsSelect.value;
             switch (selectedRom) {
+                case 'BLINKY':
+                    keys[10].style.backgroundColor = '#ff0000';
+                    keys[11].style.backgroundColor = '#ff0000';
+                    keys[2].style.backgroundColor = '#ff0000';
+                    keys[28].style.backgroundColor = '#ff0000';
+                    break;
                 case 'BLITZ':
                     keys[1].style.backgroundColor = '#ff0000'; // W key
                     break;
+                case 'br8kout':
+                    keys[0].style.backgroundColor = '#ff0000';
+                case 'BRIX':
+                    keys[0].style.backgroundColor = '#ff0000';
+                    keys[2].style.backgroundColor = '#ff0000';
+                case 'CONNECT4':
+                    keys[0].style.backgroundColor = '#ff0000';
+                    keys[1].style.backgroundColor = '#ff0000';
+                    keys[2].style.backgroundColor = '#ff0000';
+                case 'MERLIN':
+                    keys[0].style.backgroundColor = '#ff0000';
+                    keys[1].style.backgroundColor = '#ff0000';
+                    keys[10].style.backgroundColor = '#ff0000';
+                    keys[11].style.backgroundColor = '#ff0000';
+                case 'SPACE-INVADER':
+                    keys[0].style.backgroundColor = '#ff0000';
+                    keys[1].style.backgroundColor = '#ff0000';
+                    keys[2].style.backgroundColor = '#ff0000'; 
+                case 'Tank':
+                    keys[0].style.backgroundColor = '#ff0000';
+                    keys[1].style.backgroundColor = '#ff0000';
+                    keys[2].style.backgroundColor = '#ff0000';
+                    keys[11].style.backgroundColor = '#ff0000';
+                    keys[27].style.backgroundColor = '#ff0000';
+                case 'WIPEOFF':
+                keys[0].style.backgroundColor = '#ff0000';
+                keys[2].style.backgroundColor = '#ff0000';
                 // Add more cases for other games if needed
                 default:
                     // Reset all keys to default color

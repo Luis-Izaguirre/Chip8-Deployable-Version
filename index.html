@@ -5,31 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHIP-8 EMULATOR</title>
     <link rel="stylesheet" href=".\src\style.css">
+    <link rel="stylesheet" href=".\src\style2.css">
 </head>
 <body>
-    <div class="rom-selector">
-        <span id="loading-text"></span>
-        <button id="reload">RELOAD</button>
-        ROM : 
-        <select name="roms" id="roms">
-            <option value="BLITZ">BLITZ</option>
-            <option value="BLINKY">BLINKY</option>
-            <option value="BRICK">BRICK</option>
-            <option value="MAZE">MAZE</option>
-            <option value="PICTURE">PICTURE</option>
-            <option value="TANK">TANK</option>
-            <option value="SPACE-INVADER">SPACE-INVADER</option>
-            
-        </select>
-    </div>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-brand">RePlay</a>
+       
+        <ul class="navbar-links">
+            <li><a href="roms.html" class="roms">ROMS</a></li>
+            <li><a href="emulator.html" class="emu">Emulators</a></li>
+            <li><a href="login.html" class="login">Login</a></li>
+            <li><a href="register.html" class="signup">Sign Up</a></li>
+        </ul>
+    </nav>
+
+  
+<div class="rom-selector">
+    <span id="loading-text"></span>
+    <button id="reload">RELOAD</button>
+    ROM : 
+    <select name="roms" id="roms">
+        <option value="BLITZ">BLITZ</option>
+        <option value="BLINKY">BLINKY</option>
+        <option value="BRICK">BRICK</option>
+        <option value="MAZE">MAZE</option>
+        <option value="PICTURE">PICTURE</option>
+        <option value="TANK">TANK</option>
+        <option value="SPACE-INVADER">SPACE-INVADER</option>
+        <option value="BRIX">BRIX</option>
+        <option value="CONNECT4">CONNECT4</option>
+        <option value="GUESS">GUESS</option>
+        <option value="HIDDEN">HIDDEN</option>
+        <option value="KALEID">KALEID</option>
+        <option value="MERLIN">MERLIN</option>
+        <option value="MISSILE">MISSILE</option>
+        <option value="PONG">PONG</option>
+        <option value="PUZZLE">PUZZLE</option>
+        <option value="SYZYGY">SYZYGY</option>
+        <option value="TETRIS">TETRIS</option>
+        <option value="UFO">UFO</option>
+        <option value="VBRIX">VBRIX</option>
+        <option value="VERS">VERS</option>
+        <option value="WIPEOFF">WIPEOFF</option>
+    </select>
+</div>
 
     
     <main>
         <div class="console">
-            <h1>👾 ATARI EMULATOR 👾</h1>
+            <h1>🕹️ ATARI 2600 🕹️</h1>
             <canvas id="screen"></canvas>
         </div>
     </main>
+
+
+    <div class="keyboard">
+        <div class="key-row">
+            <span class="key" style="background-color: #eab308">Q</span>
+            <span class="key" style="background-color: $COLOR_W$">W</span>
+            <span class="key" style="background-color: #eab308">E</span>
+            <span class="key" style="background-color: #eab308">R</span>
+            <span class="key" style="background-color: #eab308">T</span>
+            <span class="key" style="background-color: #eab308">Y</span>
+            <span class="key" style="background-color: #eab308">U</span>
+            <span class="key" style="background-color: #eab308">I</span>
+            <span class="key" style="background-color: #eab308">O</span>
+            <span class="key" style="background-color: #eab308">P</span>
+        </div>
+        <div class="key-row">
+            <span class="key" style="background-color: #eab308">A</span>
+            <span class="key" style="background-color: #eab308">S</span>
+            <span class="key" style="background-color: #eab308">D</span>
+            <span class="key" style="background-color: #eab308">F</span>
+            <span class="key" style="background-color: #eab308">G</span>
+            <span class="key" style="background-color: #eab308">H</span>
+            <span class="key" style="background-color: #eab308">J</span>
+            <span class="key" style="background-color: #eab308">K</span>
+            <span class="key" style="background-color: #eab308">L</span>
+        </div>
+        <div class="key-row">
+            <span class="key" style="background-color: #eab308">Z</span>
+            <span class="key" style="background-color: #eab308">X</span>
+            <span class="key" style="background-color: #eab308">C</span>
+            <span class="key" style="background-color: #eab308">V</span>
+            <span class="key" style="background-color: #eab308">B</span>
+            <span class="key" style="background-color: #eab308">N</span>
+            <span class="key" style="background-color: #eab308">M</span>
+        </div>
+        <div class="key-row">
+            <span class="key" style="background-color: #eab308">1</span>
+            <span class="key" style="background-color: #eab308">2</span>
+            <span class="key" style="background-color: #eab308">3</span>
+            <span class="key" style="background-color: #eab308">4</span>
+            <span class="key" style="background-color: #eab308">5</span>
+            <span class="key" style="background-color: #eab308">6</span>
+            <span class="key" style="background-color: #eab308">7</span>
+            <span class="key" style="background-color: #eab308">8</span>
+            <span class="key" style="background-color: #eab308">9</span>
+            <span class="key" style="background-color: #eab308">0</span>
+        </div>
+    </div>
+    <script>
+        const romsSelect = document.getElementById('roms');
+        const keys = document.getElementsByClassName('key');
+
+        romsSelect.addEventListener('change', function() {
+            const selectedRom = romsSelect.value;
+            switch (selectedRom) {
+                case 'BLITZ':
+                    keys[1].style.backgroundColor = '#ff0000'; // W key
+                    break;
+                // Add more cases for other games if needed
+                default:
+                    // Reset all keys to default color
+                    Array.from(keys).forEach(key => {
+                        key.style.backgroundColor = '#eab308';
+                    });
+                    break;
+            }
+        });
+    </script>
 
       <!-- Include your JavaScript files -->
       <script src="./src/emulator.js"></script>

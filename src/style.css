@@ -26,8 +26,8 @@ main {
 .console {
     border: 5px solid black;
     padding: 1em;
-    background: #be2edd;
-    color: #fff;
+    background: grey;
+    color: #ef4444d1;
 }
 
 .rom-selector{
